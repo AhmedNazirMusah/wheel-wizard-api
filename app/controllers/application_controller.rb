@@ -4,6 +4,7 @@ require "#{Rails.root}/lib/json_web_token"
 class ApplicationController < ActionController::API
   before_action :authenticate_user_if_token_present
   before_action :update_allowed_parameters, if: :devise_controller?
+  skip_before_action :authenticate_user_if_token_present, if: :devise_controller?
 
   private
 

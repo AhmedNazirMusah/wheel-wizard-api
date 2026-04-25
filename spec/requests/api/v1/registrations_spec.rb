@@ -28,7 +28,7 @@ RSpec.describe 'users/registrations', type: :request do
         }
       end
 
-      response(200, 'successful') do
+      response(201, 'successful') do
         examples 'application/json' =>
           { message: 'Sign up successful' }
         run_test!
